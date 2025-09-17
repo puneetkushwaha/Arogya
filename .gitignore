@@ -1,0 +1,25 @@
+# System files
+.DS_Store
+
+# Node modules
+node_modules/
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Build output
+/build
+
+# Vite config
+vite.config.*s.*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FAFAFA; /* gray-50 */
+    --color-foreground: #212121; /* gray-800 */
+    --color-border: #E0E0E0; /* gray-300 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #2196F3; /* blue-500 */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #212121; /* gray-800 */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #212121; /* gray-800 */
+    
+    /* Muted Colors */
+    --color-muted: #F5F5F5; /* gray-100 */
+    --color-muted-foreground: #757575; /* gray-600 */
+    
+    /* Primary Colors */
+    --color-primary: #2196F3; /* blue-500 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #4CAF50; /* green-500 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Destructive Colors */
+    --color-destructive: #F44336; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #FF9800; /* orange-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #4CAF50; /* green-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #FFC107; /* yellow-500 */
+    --color-warning-foreground: #212121; /* gray-800 */
+    
+    /* Error Colors */
+    --color-error: #F44336; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Healthcare Specific Colors */
+    --color-medical-trust: #2196F3; /* blue-500 */
+    --color-health-positive: #4CAF50; /* green-500 */
+    --color-emergency: #FF9800; /* orange-500 */
+    --color-surface: #FFFFFF; /* white */
+    --color-text-primary: #212121; /* gray-800 */
+    --color-text-secondary: #757575; /* gray-600 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-caption {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Emergency Pulse Animation */
+  @keyframes emergency-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
+  
+  .emergency-pulse {
+    animation: emergency-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Voice Input Pulse Animation */
+  @keyframes voice-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .voice-pulse {
+    animation: voice-pulse 1.5s ease-in-out infinite;
+  }
+  
+  /* Card Elevation System */
+  .card-elevation-0 {
+    box-shadow: none;
+  }
+  
+  .card-elevation-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-elevation-2 {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-elevation-3 {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Emergency Card Elevation */
+  .card-elevation-emergency {
+    box-shadow: 0 8px 24px rgba(255, 152, 0, 0.3);
+  }
+  
+  /* Gentle Transitions */
+  .transition-gentle {
+    transition: all 0.2s ease;
+  }
+  
+  .transition-medium {
+    transition: all 0.3s ease;
+  }
+  
+  /* Healthcare Specific Utilities */
+  .medical-border {
+    border: 1px solid var(--color-border);
+  }
+  
+  .health-status-border {
+    border: 2px solid var(--color-secondary);
+  }
+  
+  .emergency-border {
+    border: 2px solid var(--color-emergency);
+  }
+}
